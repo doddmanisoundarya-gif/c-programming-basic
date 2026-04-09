@@ -1,0 +1,110 @@
+
+// Swapping values
+
+#include<stdio.h>
+int main(){
+    int x, y, temp;
+    printf("Enter the value of X: ");
+    scanf("%d", &x);
+    printf("Enter the value of Y: ");
+    scanf("%d", &y);
+    printf("Before swaping the value of x=%d, y=%d\n", x, y);
+    temp=x;
+    x=y;
+    y=temp;
+    printf("After swaping the value of x=%d, y=%d", x, y);
+    return 0;
+}
+
+//Simple Interest
+
+#include<stdio.h>
+int main(){
+    int principle, rate, time;
+    printf("Enter the principle value: ");
+    scanf("%d", &principle);
+    printf("Enter the rate value: ");
+    scanf("%d", &rate);
+    printf("Enter the time value: ");
+    scanf("%d", &time);
+    float si=(principle*rate*time)/100;
+    printf("The simple intrest is: %f", si);
+    return 0;
+}
+
+//finding palindrome
+
+#include<stdio.h>
+int main(){
+    int n, rem, rev=0, num;
+    printf("Enter the integer: ");
+    scanf("%d", &n);
+    num=n;
+    while(n!=0){
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    if(num==rev){
+        printf("%d is palindrome", num);
+    }
+    else{
+        printf("%d is not palindrome", num);
+    }
+    return 0;
+}
+
+// Factorial value
+
+#include<stdio.h>
+int main(){
+    int n, i;
+    long fact=1;
+    printf("Enter the number: ");
+    scanf("%d", &n);
+    if(n<0){
+        printf("Error: Factorial of negative number does not exist");
+    }
+    else if(n==0||n==1){
+        printf("Factorial of %d=%ld", n, fact);
+    }
+    else{
+        for(i=1; i<=n; i++){
+        fact=fact*i;
+        }
+    printf("Factorial of %d=%ld", n, fact);
+    }
+}
+
+// Findint roots
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+    float a, b, c, D, root1, root2, real, imag;
+    printf("Enter the vale of a: ");
+    scanf("%f", &a);
+    printf("Enter the vale of b: ");
+    scanf("%f", &b);
+    printf("Enter the vale of c: ");
+    scanf("%f", &c);
+    D=(b*b)-(4*a*c);
+    if(D==1){
+        printf("The roots are real and equal\n");
+        root1=root2=-b/(2*a);
+        printf("root1=root2 is %.3f", root1);
+    }
+    else if(D>0){
+        printf("The roots are real and distinc\n");
+        root1=(-b)+sqrt(D)/(2*a);
+        root2=(-b)-sqrt(D)/(2*a);
+        printf("root1 is %.3f root2 is %.3f", root1, root2);
+    }
+    else{
+        printf("The roots are real and imagination\n");
+        real=-b/(2*a);
+        imag=sqrt(fabs(D))/(2*a);
+        printf("root1 is %.3f+i%.3f\n", real, imag);
+        printf("root1 is %.3f-i%.3f\n", real, imag);
+    }
+}
