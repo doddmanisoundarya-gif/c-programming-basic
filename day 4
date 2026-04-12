@@ -1,0 +1,58 @@
+// strintg length
+#include<stdio.h>
+int main(){
+    int length=0, i=0;
+    char str[50];
+    printf("Enter the strintg: ");
+    scanf("%s", &str);
+    while(str[i]!='\0'){
+        length++;
+        i++;
+    }
+    printf("The length of the string is: %d", length);
+    return 0;
+}
+
+// string concatination
+
+#include<stdio.h>
+int main(){
+    int i=0,j=0;
+    char str1[50], str2[50], result[100];
+    printf("Enter the first string: ");
+    scanf("%s", &str1);
+    printf("Enter the second string: ");
+    scanf("%s", &str2);
+    while(str1[i]!='\0'){
+        result[i]=str1[i];
+        i++;
+    }
+    while(str2[j]!='\0'){
+        result[i]=str2[j];
+        i++;
+        j++;
+    }
+    printf("The concatinated string is: %s", result);
+    return 0;
+}
+
+
+// String reverse
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[50];
+    int len, i;
+    char temp;
+    printf("Enter the string: ");
+    scanf("%s", str);
+    len=strlen(str);
+    for(i=0; i<len/2; i++){
+        temp=str[i];
+        str[i]=str[len-i-1];
+        str[len-i-1]=temp;
+    }
+    printf("Reversed string is: %s\n", str);
+    return 0;
+}
