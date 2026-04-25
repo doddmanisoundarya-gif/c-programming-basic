@@ -1,0 +1,54 @@
+// palindrom
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[100];
+    scanf("%s", str);
+    int len=strlen(str);
+    int ispalindrom=1;
+    for(int i=0; i<len/2; i++){
+        if(str[i]!=str[len-i-1]);
+        ispalindrom=0;
+        break;
+    }
+    if(ispalindrom){
+        printf("YES");
+    }
+    else
+    printf("NO");
+}
+ 
+//Replace Vowels with space  
+
+#include<stdio.h>
+int main(){
+    char str[100];
+    scanf("%s", &str);
+    for(int i=0; str[i]!='\0'; i++){
+        if(str[i]=='a'||str[i]=='e'||str[i]=='o'||str[i]=='i'||str[i]=='u'||
+        str[i]=='A'||str[i]=='E'||str[i]=='O'||str[i]=='I'||str[i]=='U'){
+            str[i]=' ';
+        }
+    }
+    printf("%s", str);
+}*/
+
+// Count vowels and consonants
+#include<stdio.h>
+int main(){
+    char str[100];
+    int vowels=0, consonants=0;
+    scanf("%s", str);
+    for(int i=0; str[i]!='\0'; i++){
+        if(str[i]=='a'||str[i]=='e'||str[i]=='o'||str[i]=='i'||str[i]=='u'||
+        str[i]=='A'||str[i]=='E'||str[i]=='O'||str[i]=='I'||str[i]=='U'){
+            vowels++;
+        }
+        else if((str[i]>='a'&&str[i]<='z')||
+        (str[i]>='A'&&str[i]<='Z')){
+            consonants++;
+        }
+    }
+    printf("%d %d", vowels, consonants);
+}
